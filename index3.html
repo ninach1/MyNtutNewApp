@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>PFold: Paper-Like Unfolding Effect</title>
+        <meta name="description" content="PFold: Paper-Like Unfolding Effect" />
+        <meta name="keywords" content="css3, experiment, 3d, unfolding, fold, paper, component, element, web design, jquery, plugin, perspective" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/pfold.css" />
+        <link rel="stylesheet" type="text/css" href="css/custom2.css" />
+        <style type="text/css">
+        #apDiv1 {
+	position: absolute;
+	width: 200px;
+	height: 21px;
+	z-index: 1;
+	left: 298px;
+	top: 292px;
+}
+        </style>
+        
+        
+        <script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
+		
+			
+			
+				
+			
+<section class="main demo-2">
+				
+  <div id="grid" class="grid clearfix">
+				
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<img src="images/thumbs/3.jpg" alt="image03" />
+						  <span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<img src="images/large/3.jpg" alt="image03-large" />
+							<div class="title"><h4>在我們發現，之前</h4> before we to disturb<a href="https://www.facebook.com/photo.php?fbid=395724313821384&set=a.144630078930810.28004.100001514571097&type=3&theater" class="icon-link"></a></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<img src="images/thumbs/1.jpg" alt="image01" />
+						  <span class="icon-eye"></span>
+						</div>
+						<div class="uc-final-content">
+							<img src="images/large/1.jpg" alt="image01-large" />
+							<div class="title"><h4>原來就是你髮梢的風</h4>the deep we learn to be <a href="https://www.facebook.com/photo.php?fbid=519124741481340&set=a.144630078930810.28004.100001514571097&type=3&theater" class="icon-link"></a></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+					<div class="uc-container">
+						<div class="uc-initial-content">
+							<img src="images/thumbs/2.jpg" alt="image02" />
+						  <span class="icon-eye">
+				                                  
+							</span>
+						</div>
+						<div class="uc-final-content">
+							<img src="images/large/2.jpg" alt="image02-large" />
+							<div class="title"><h4>美美 / 醜醜</h4>more than beautiful is <a href="https://www.facebook.com/photo.php?fbid=519979534729194&set=a.144630078930810.28004.100001514571097&type=3&theater" class="icon-link"></a></div>
+							<span class="icon-cancel"></span>
+						</div>
+					</div><!-- / uc-container -->
+
+    <div class="uc-container">
+						<div class="uc-initial-content">
+							<img src="images/thumbs/4.jpg" alt="image04" />
+							<span class="icon-eye"></span>
+						</div>
+      <div class="uc-final-content">
+							<img src="images/large/4.jpg" alt="image04-large" />
+							<div class="title"><h4>當少了耳朵只剩嘴吧，你只會相信你聽見的</h4> not only believe one who to talk <a href="https://www.facebook.com/photo.php?fbid=253945724665911&set=a.144630078930810.28004.100001514571097&type=3&theater" class="icon-link"></a></div>
+							<span class="icon-cancel"></span>
+						</div>
+    <!-- / uc-container -->  </div>
+  </div>
+  <!-- / grid -->
+		
+                    
+                    
+                    
+                    <div id="apDiv1"><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="150" height="20" id="" align="200px">
+    <param name="allowScriptAccess" value="sameDomain" />
+    <param name="movie" value="http://i212.photobucket.com/albums/cc274/eting1/dewplayer-mini.swf?mp3=http://s85.youmaker.com/other/2014/11-16/mp3375375097455fd59806e546939fe1e6ed29b84723085.mp3&amp;autostart=1&amp;autoreplay=1&amp;bgcolor=FFFFFF" />
+    <param name="quality" value="high" />
+    <param name="bgcolor" value="#444444" />
+    <embed src="http://i212.photobucket.com/albums/cc274/eting1/dewplayer-mini.swf?mp3=http://s85.youmaker.com/other/2014/11-16/mp3375375097455fd59806e546939fe1e6ed29b84723085.mp3&amp;autostart=1&amp;autoreplay=1&amp;bgcolor=#444444" quality="high" bgcolor="#444444" width="150" height="20" name="" align="middle" allowscriptaccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>
+  </object></div>
+                    
+                    
+                    
+                    
+                   
+                    	
+</section>
+
+		</div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.pfold.js"></script>
+<script type="text/javascript">
+			$(function() {
+
+				// say we want to have only one item opened at one moment
+				var opened = false;
+
+				$( '#grid > div.uc-container' ).each( function( i ) {
+
+					var $item = $( this ), direction;
+
+					switch( i ) {
+						case 0 : direction = ['right','bottom']; break;
+						case 1 : direction = ['left','bottom']; break;
+						case 2 : direction = ['right','top']; break;
+						case 3 : direction = ['left','top']; break;
+					}
+					
+					var pfold = $item.pfold( {
+						folddirection : direction,
+						speed : 300,
+						onEndFolding : function() { opened = false; },
+						centered : true
+					} );
+
+					$item.find( 'span.icon-eye' ).on( 'click', function() {
+
+						if( !opened ) {
+							opened = true;
+							pfold.unfold();
+						}
+
+
+					} ).end().find( 'span.icon-cancel' ).on( 'click', function() {
+
+						pfold.fold();
+
+					} );
+
+				} );
+				
+			});
+		</script>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+</body>
+</html>
