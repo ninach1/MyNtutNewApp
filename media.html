@@ -1,8 +1,12 @@
-<html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+                          "http://www.w3.org/TR/html4/strict.dtd">
+    <html>
       <head>
         <title>Media Example</title>
-
+		<link rel="stylesheet" type="text/css" href="css/csshake.min.css">
+		<link type="text/css" href="css/csshake.min.css">
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8" src="main.js"></script>
         <script type="text/javascript" charset="utf-8">
 
         // Wait for Cordova to load
@@ -23,9 +27,10 @@
         // Play audio
         //
         function playAudio(src) {
-            // Create Media object from src
-            my_media = new Media(src, onSuccess, onError);
-
+            if (my_media == null) {
+                // Create Media object from src
+                my_media = new Media(src, onSuccess, onError);
+            } // else play current audio
             // Play audio
             my_media.play();
 
@@ -90,9 +95,9 @@
         </script>
       </head>
       <body>
-        <a href="#" class="btn large" onClick="playAudio('http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3');">Play Audio</a>
-        <a href="#" class="btn large" onClick="pauseAudio();">Pause Playing Audio</a>
-        <a href="#" class="btn large" onClick="stopAudio();">Stop Playing Audio</a>
+        <a href="#" class="btn large" onclick="playAudio('http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3');">Play Audio</a>
+        <a href="#" class="btn large" onclick="pauseAudio();">Pause Playing Audio</a>
+        <a href="#" class="btn large" onclick="stopAudio();">Stop Playing Audio</a>
         <p id="audio_position"></p>
       </body>
     </html>
