@@ -25,8 +25,98 @@
         
         
         <script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
-		
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+        // Wait for Cordova to load
+        //
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        // Cordova is ready
+        //
+        function onDeviceReady() {
+            playAudio("http://s85.youmaker.com/other/2014/11-16/mp3375375097455fd59806e546939fe1e6ed29b84723085.mp3");
+        }
+
+        // Audio player
+        //
+        var my_media = null;
+        var mediaTimer = null;
+
+        // Play audio
+        //
+        function playAudio(src) {
+            // Create Media object from src
+            my_media = new Media(src, onSuccess, onError);
+
+            // Play audio
+            my_media.play();
+
+            // Update my_media position every second
+            if (mediaTimer == null) {
+                mediaTimer = setInterval(function() {
+                    // get my_media position
+                    my_media.getCurrentPosition(
+                        // success callback
+                        function(position) {
+                            if (position > -1) {
+                                setAudioPosition((position) + " sec");
+                            }
+                        },
+                        // error callback
+                        function(e) {
+                            console.log("Error getting pos=" + e);
+                            setAudioPosition("Error: " + e);
+                        }
+                    );
+                }, 1000);
+            }
+        }
+
+        // Pause audio
+        // 
+        function pauseAudio() {
+            if (my_media) {
+                my_media.pause();
+            }
+        }
+
+        // Stop audio
+        // 
+        function stopAudio() {
+            if (my_media) {
+                my_media.stop();
+            }
+            clearInterval(mediaTimer);
+            mediaTimer = null;
+        }
+
+        // onSuccess Callback
+        //
+        function onSuccess() {
+            console.log("playAudio():Audio Success");
+        }
+
+        // onError Callback 
+        //
+        function onError(error) {
+            alert('code: '    + error.code    + '\n' + 
+                  'message: ' + error.message + '\n');
+        }
+
+        // Set audio position
+        // 
+        function setAudioPosition(position) {
+            document.getElementById('audio_position').innerHTML = position;
+        }
+
+</script>
+          
+          
+          
+          	
 			
+                    
 			
 				
 			
@@ -86,9 +176,10 @@
   </div>
   <!-- / grid -->
 		
-                    
-                    
-                    
+                 
+       
+                  <!--  
+                  
                     <div id="apDiv1"><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="150" height="20" id="" align="200px">
     <param name="allowScriptAccess" value="sameDomain" />
     <param name="movie" value="http://i212.photobucket.com/albums/cc274/eting1/dewplayer-mini.swf?mp3=http://s85.youmaker.com/other/2014/11-16/mp3375375097455fd59806e546939fe1e6ed29b84723085.mp3&amp;autostart=1&amp;autoreplay=1&amp;bgcolor=FFFFFF" />
@@ -96,10 +187,16 @@
     <param name="bgcolor" value="#444444" />
     <embed src="http://i212.photobucket.com/albums/cc274/eting1/dewplayer-mini.swf?mp3=http://s85.youmaker.com/other/2014/11-16/mp3375375097455fd59806e546939fe1e6ed29b84723085.mp3&amp;autostart=1&amp;autoreplay=1&amp;bgcolor=#444444" quality="high" bgcolor="#444444" width="150" height="20" name="" align="middle" allowscriptaccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed>
   </object></div>
+  
+                    -->
                     
                     
+                    <!-- 
+                    
+                    <embed src="http://s85.youmaker.com/other/2014/11-16/mp3375375097455fd59806e546939fe1e6ed29b84723085.mp3" autostart=true hidden=true loop=true>
                     
                     
+                      -->
                    
                     	
 </section>
@@ -159,9 +256,8 @@
 			});
 		</script>
                     
-                    
-                    
-                    
+
+                     
                     
                     
                     
